@@ -205,7 +205,7 @@ def run_headless_game(game):
         row, col = game.current_player.get_move(game.board)
 
         game.metrics['all_moves'].append( [row, col, game.current_player.id] )
-
+        game.board.last_move = [row, col]
         game.board.board[row][col] = game.current_player.id
         game.change_turn()
 
